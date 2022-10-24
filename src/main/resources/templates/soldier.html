@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>soldier</title>
+</head>
+<body>
+    <h1>Soldier</h1>
+    <p th:text="${name}"></p>
+    <p>man kan ikke skrive inde i de tags som har thymeleaf</p>
+    <!--thymeleaf: template engine
+     forskellige tem eng har ofte samme syntax med dollar tegn
+     th:text="${name}", text er fordi vi vil have text ind
+     -->
+    <br>
+    <div th:text="${name2}"></div>
+    <p>Soldier name: <span th:text="${name}"></span></p>
+
+    <p>Soldier names: <span th:text="${soldierslist}"></span></p> <!--kan tage en hel liste og udskrive
+     ellers skulle man loope igennem i thymeleaf, står i gitbook : thymeleaf iterations-->
+
+    <p>her loopes igennem soldierslist gennem thymeleaf loop:</p>
+    <table> <!--th:each er som for each loop i java, for -->
+        <tr th:each="soldier : ${soldierslist}"> <!--loopes i table row og postes i td -->
+            <td th:text="${soldier}"></td> <!--soldier her er en midlertidig variabel til at loope
+             gennem listen, ligesom "int i" i for-loop eller som o i for-each for(objekt o : liste)-->
+        </tr>
+    </table>
+
+</body>
+</html>
